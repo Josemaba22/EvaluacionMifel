@@ -13,7 +13,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 	public void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-			.antMatchers("/api/item/hello", "/api/pokemon/consume-api", "/h2-console/**").permitAll()
+			.antMatchers("/api/item/hello", "/api/pokemon/consume-api", "/h2-console/**", "/api/encryption/**").permitAll()
 			.anyRequest().authenticated()
 			.and()
             .csrf().ignoringAntMatchers("/h2-console/**")
